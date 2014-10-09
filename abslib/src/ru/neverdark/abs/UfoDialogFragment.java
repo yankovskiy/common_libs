@@ -40,7 +40,9 @@ public abstract class UfoDialogFragment extends SherlockDialogFragment implement
     
     protected void createDialog() {
         mAlertDialog = new AlertDialog.Builder(mContext);
-        mAlertDialog.setView(mView);
+        if (mView != null) {
+            mAlertDialog.setView(mView);
+        }
     }
     
     public void setCallback(OnCallback callback) {
